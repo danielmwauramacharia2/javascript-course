@@ -1,0 +1,23 @@
+p {
+    font-family: Arial;
+    font-size: 12px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+button {
+    font-family: Arial;
+    border-color: black;
+    border: 2px;
+    border-style: solid;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.cart-button {
+    background-color: yellow;
+}
+
+.buy-button {
+    background-color: orange;
+}
