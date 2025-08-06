@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Coin-flip-game </title>
+    <style>
+        button {
+            font-family: Arial;
+            width: 80px;
+            font-size: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p>Coin Flip Game</p>
+    <button onclick="
+        userChoise = 'Heads';
+        number = Math.random();
+
+        computerChoice = (number <= 0.5) ? 'Heads' : 'Tails';
+
+        alert(
+            `Your choice is ${userChoise} and Computer chose: ${computerChoice}. ` +
+            ((computerChoice === 'Heads') ? 'Its a Tie' : 'You Win!')
+        );
+    ">Head</button>
+
+    <button onclick="
+        userChoise = 'Tails';
+        number = Math.random();
+
+        computerChoice = (number > 0.5) ? 'Tails' : 'Heads';
+
+        alert(
+            `Your choice is ${userChoise} and Computer chose: ${computerChoice}. ` +
+            ((computerChoice === 'Tails') ? 'Its a Tie' : 'You Win!')
+        );
+    ">Tail</button>
+    
+    <script>
+        let computerChoice = '';
+        let userChoise = '';
+        let number = 0;
+    </script>
+    
+</body>
+</html>
