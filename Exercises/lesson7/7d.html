@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Coversion</title>
+</head>
+<body>
+    <script>
+        function convertToFahrenheit(celcius) {
+            if (celcius === undefined || celcius === null || isNaN(celcius)) {
+                console.log('Please provide a temperature in Celsius.');
+                return;
+            }
+
+            const fahrenheit = (celcius * 9/5) + 32;
+            console.log(`${celcius}°C is equal to ${fahrenheit}°F`);
+            return fahrenheit;
+        }
+
+        convertToFahrenheit(0); // Convert 0°C to Fahrenheit
+        convertToFahrenheit(100); // Convert 100°C to Fahrenheit
+        convertToFahrenheit(); // Call the function without an argument
+        convertToFahrenheit('abc'); // Call the function with a non-numeric value
+    </script>
+    
+</body>
+</html>
