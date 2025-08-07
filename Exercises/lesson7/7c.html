@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greet Function </title>
+</head>
+<body>
+    <script>
+        function greet(name) {
+            if (!name) {
+                console.log('Hi there!');
+                return;
+            }
+            console.log(`Hello, ${name}!`);
+        }
+        greet('Daniel'); // Call the function to execute it
+        greet('Alice'); // Call the function with another name
+        greet(); // Call the function with yet another name
+    </script>
+</body>
+</html>
