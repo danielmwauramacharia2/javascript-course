@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Convert</title>
+</head>
+<body>
+    <script>
+        function convertTemperature(temperature, unit) {
+            if ((unit !== 'C' && unit !== 'F') || temperature === undefined || temperature === null || isNaN(temperature)) {
+                console.log("Enter valid Inputs");
+                return;
+            }
+
+            if (unit === 'C') {
+                let tempFahrenheit = ((temperature * 9/5) + 32).toFixed(1);
+                console.log(`${temperature} degrees celcius is ${tempFahrenheit} Fahrenheit`);
+                return Number(tempFahrenheit);
+            } else {
+                let tempCelcius = ((temperature - 32) * 5/9).toFixed(1);
+                console.log(`${temperature} Fahrenheit is ${tempCelcius} degrees`);
+                return Number(tempCelcius);
+            }
+        }
+
+        // convertTemperature(20, 'C');
+        // convertTemperature(20, 'F');
+        // convertTemperature();
+        // convertTemperature(20);
+        // convertTemperature(2, 2);
+
+
+            
+    </script>
+    
+</body>
+</html>
