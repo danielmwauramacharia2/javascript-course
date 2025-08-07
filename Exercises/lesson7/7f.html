@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length Conversion</title>
+</head>
+<body>
+    <script>
+        function convertLength(length, from, to) {
+            from = from.toLowerCase();
+            to = to.toLowerCase();
+
+            if (length === undefined || length === null || isNaN(length) || from === '' || to === '' || from === undefined || to === undefined || typeof from !== 'string' || typeof to !== 'string') {
+                console.log("Check and Validate your Inputs")
+                return;
+            }
+
+            let toFeet = 0;
+            let toKilometer = 0;
+            let toMiles = 0;
+
+            if (from === 'km' && to === 'ft') {
+                toFeet = Number((length * 3281).toFixed(1));
+                console.log(`${length} kilometers is ${toFeet} Feet`);
+                return toFeet;
+            } 
+            
+                else if (from === 'km' && to === 'miles') {
+                    toMiles = Number((length / 1.6).toFixed(1));
+                    console.log(`${length} kilometers is ${toMiles} Miles`);
+                    return toMiles;
+
+            } 
+                else if (from === 'ft' && to === 'km') {
+                    toKilometer = Number((length / 3281).toFixed(1));
+                    console.log(`${length} Feet is ${toKilometer} Kilometers`);
+                    return toKilometer;
+
+            } 
+                else if (from === 'ft' && to === 'miles') {
+                    toMiles = Number((length / 5280).toFixed(1));
+                    console.log(`${length} Feet is ${toMiles} Miles`);
+                    return toMiles;
+
+            } 
+                else if (from === 'miles' && to === 'km') {
+                    toKilometer = Number((length * 1.6).toFixed(1));
+                    console.log(`${length} Miles is ${toKilometer} Kilometers`);
+                    return toKilometer;
+
+            } 
+                else if (from === 'miles' && to === 'ft') {
+                    toFeet = Number((length * 5280).toFixed(1));
+                    console.log(`${length} Miles is ${toFeet} Feet`);
+                    return toFeet;
+
+            }
+        }
+
+    convertLength(1, 'km', 'ft');      // Should log: 1 kilometers is 3281.0 Feet
+    convertLength(5, 'km', 'miles');   // Should log: 5 kilometers is 3.1 Miles
+    convertLength(3281, 'ft', 'km');   // Should log: 3281 Feet is 1.0 Kilometers
+    convertLength(5280, 'ft', 'miles');// Should log: 5280 Feet is 1.0 Miles
+    convertLength(2, 'miles', 'km');   // Should log: 2 Miles is 3.2 Kilometers
+    convertLength(3, 'miles', 'ft');   // Should log: 3 Miles is 15840.0 Feet
+ </script>
+</body>
+</html>
