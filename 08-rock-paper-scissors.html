@@ -22,6 +22,7 @@
     ">Scores</button>
 
     <button onclick="
+      localStorage.removeItem('scores');  
       scores.Wins = 0;
       scores.Losses = 0;
       scores.Ties = 0;
