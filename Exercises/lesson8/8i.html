@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Coin-flip-game </title>
+    <style>
+        button {
+            font-family: Arial;
+            width: 80px;
+            font-size: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p>Coin Flip Game</p>
+    <button onclick="
+        playGame('Head');
+    ">Head</button>
+
+    <button onclick="
+        playGame('Tail');
+    ">Tail</button>
+    
+    <script>
+
+        let score = JSON.parse(localStorage.getItem('score')) || {
+            Win: 0,
+            Lose: 0
+        }
+        
+
+        function playGame(guess) {
+            let computerPick = computerChoice();
+            if (guess === computerPick) {
+                score.Win += 1;
+                alert(`Your choice is ${guess} and Computer chose: ${computerPick}. Its a Win!\nWins: ${score.Win}  Losses: ${score.Lose}`);
+            } else {
+                score.Lose += 1;
+                alert(`Your choice is ${guess} and Computer chose: ${computerPick}. You Lose!\nWins: ${score.Win}  Losses: ${score.Lose}`);
+            }
+
+            localStorage.setItem('score', JSON.stringify(score));
+
+            return;
+        }
+
+        function computerChoice() {
+            let choice = '';
+            let number = Math.random();
+
+            choice = (number <= 0.5) ? 'Head' : 'Tail';
+            return choice;
+        }
+
+    </script>
+    
+</body>
+</html>
