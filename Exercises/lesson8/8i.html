@@ -23,6 +23,11 @@
     <button onclick="
         playGame('Tail');
     ">Tail</button>
+
+    <button onclick="
+        localStorage.removeItem('score');
+        score = { Win: 0, Lose: 0 };
+    ">Reset</button>
     
     <script>
 
