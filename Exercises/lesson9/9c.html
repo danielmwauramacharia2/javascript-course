@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Head | Tails</title>
+</head>
+<body>
+    <button class="js-head-button" onclick="
+        buttonClick('Heads');">Heads</button>
+
+    <button class="js-tail-button" onclick="
+        buttonClick('Tails');">Tails</button>
+
+    <p class="js-click-update"></p>
+    <script>
+        function buttonClick(click) {
+            if (click === 'Heads') {
+                document.querySelector('.js-click-update').innerHTML = 'You chose: Heads';
+            } else {
+                document.querySelector('.js-click-update').innerHTML = 'You chose: Tails';
+            }
+        }
+    </script>
+</body>
+</html>
