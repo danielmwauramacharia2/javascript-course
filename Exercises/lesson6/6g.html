@@ -6,6 +6,7 @@
   <body>
     <button onclick="
       console.log(`Cart quantity: ${cartQuantity}`);
+      display();
     ">Show Quantity</button>
 
     <button onclick="
@@ -15,6 +16,7 @@
         cartQuantity++;
         console.log(`Cart quantity: ${cartQuantity}`);
       }
+      display();
       ">Add to Cart</button>
 
     <button onclick="
@@ -24,6 +26,7 @@
             cartQuantity += 2;
             console.log(`Cart quantity: ${cartQuantity}`);
       }
+      display();
     ">+2</button>
 
     <button onclick="
@@ -33,6 +36,7 @@
           cartQuantity += 3;
           console.log(`Cart quantity: ${cartQuantity}`);
         }
+        display();
     ">+3</button>
 
     <button onclick="
@@ -42,6 +46,7 @@
           cartQuantity += 4;
           console.log(`Cart quantity: ${cartQuantity}`);
         }
+        display();
     ">+4</button>
 
     <button onclick="
@@ -51,6 +56,7 @@
           cartQuantity += 5;
           console.log(`Cart quantity: ${cartQuantity}`);
         }
+        display();
     ">+5</button>
 
     <!-- vvv This code was changed. vvv -->
@@ -61,6 +67,7 @@
           cartQuantity--;
           console.log(`Cart quantity: ${cartQuantity}`);
         }
+        display();
       ">Remove from cart</button>
 
     <button onclick="
@@ -70,6 +77,7 @@
           cartQuantity -= 2;
           console.log(`Cart quantity: ${cartQuantity}`);
         }
+        display();
     ">-2</button>
 
     <button onclick="
@@ -79,6 +87,7 @@
           cartQuantity -= 3;
           console.log(`Cart quantity: ${cartQuantity}`);
         }
+        display();
     ">-3</button>
     <!-- ^^^ This code was changed. ^^^ -->
 
@@ -86,10 +95,19 @@
       cartQuantity = 0;
       console.log('Cart was reset.');
       console.log(`Cart quantity: ${cartQuantity}`);
+      display();
     ">Reset Cart</button>
+
+    <p class="js-display"></p>
 
     <script>
       let cartQuantity = 0;
+      display();
+
+      function display() {
+          document.querySelector(".js-display").innerHTML = `Cart quantity: ${cartQuantity}`;
+      }
+      
     </script>
   </body>
 </html>
