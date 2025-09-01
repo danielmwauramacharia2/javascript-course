@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Cost Calculation</title>
+    <style>
+        p {
+            font-size: 12px;
+            font-family: Arial;
+        }
+
+        .input-button {
+            height: 15px;
+            font-size: 10px;
+            border-style: solid;
+            border-color: gray;
+            border-width: 1px;
+            border-radius: 5px;
+            padding: 6px;
+            align-items: center;
+        }
+
+        .calculate-button {
+            color: white;
+            font-size: 10px;
+            font-family: Arial;
+            background-color: green;
+            border: none;
+            padding: 7px;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <input placeholder="Cost of Order" class="js-input-button input-button" onkeydown="
+    handleCostKeydown(event)">
+    <button class="calculate-button" onclick="
+        calculateTotalCost();
+    ">Calculate</button>
+    <p class="js-total-cost"></p>
+    <script>
+        function handleCostKeydown(event) {
+            if(event.key === 'Enter') {
+                calculateTotalCost();
+            }
+        }
+
+        function calculateTotalCost() {
+            const inputElement = document.querySelector('.js-input-button');
+            let cost = Number(inputElement.value) * 100;
+            if (cost < 4000) {
+                cost += 1000;
+            }
+            document.querySelector('.js-total-cost').innerHTML = `$${cost / 100}`;
+        }
+    </script>
+</body>
+</html>
