@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array | Increase by One</title>
+</head>
+<body>
+    <script>
+        function arrayIncrease(array) {
+            newArray = [];
+            for (i = 0; i < array.length; i++) {
+                newArray[i] = (array[i] + 1);
+            }
+
+            return newArray;
+        }
+
+        console.log(arrayIncrease([1, 2, 3])); // test the function
+    </script>
+    
+</body>
+</html>
