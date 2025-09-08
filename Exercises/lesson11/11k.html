@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count the Positive</title>
+</head>
+<body>
+    <script>
+        let count = 0;
+        function countPositive(array) {
+            for (i = 0; i < array.length; i++) {
+                if (array[i] > 0) {
+                    count += 1;
+                }
+            }
+
+            return count;
+
+        }
+
+        console.log(countPositive([1, -3, 5]));
+    </script>
+    
+</body>
+</html>
